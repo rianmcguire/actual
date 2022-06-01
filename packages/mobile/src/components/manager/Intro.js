@@ -16,7 +16,7 @@ import { bindActionCreators } from 'redux';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import * as actions from 'loot-core/src/client/actions';
 import TransitionView from './TransitionView';
-import Icon from '../../../assets/icon.png';
+import Icon from '../../../assets/icon@2x.png';
 
 function ExternalLink({ href, children }) {
   return (

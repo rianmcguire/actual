@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const appDirectory = path.resolve(__dirname, '../');
 
@@ -16,8 +17,9 @@ const babelLoaderConfiguration = {
     path.resolve(appDirectory, 'client.js'),
     path.resolve(appDirectory, 'src'),
     path.resolve(appDirectory, 'node_modules/react-native-uncompiled'),
+    path.resolve(appDirectory, 'node_modules/react-native-reanimated'),
     path.resolve(appDirectory, '../loot-core'),
-    path.resolve(appDirectory, '../loot-design'),
+    path.resolve(appDirectory, '../loot-design')
   ],
   use: {
     loader: 'babel-loader',
@@ -65,11 +67,33 @@ module.exports = {
       imageLoaderConfiguration
     ]
   },
+    plugins: [
+
+    new HtmlWebpackPlugin({
+    }),
+
+  ],
 
   resolve: {
     // This will only alias the exact import "react-native"
     alias: {
-      'react-native$': 'react-native-web'
+      'react-native$': 'react-native-web',
+      'react-native-svg$': path.resolve(
+        appDirectory,
+        'node_modules/react-native-svg'
+      ),
+      'react-native-gesture-handler$': path.resolve(
+        appDirectory,
+        'node_modules/react-native-gesture-handler'
+      ),
+      'react-native-reanimated$': path.resolve(
+        appDirectory,
+        'node_modules/react-native-reanimated'
+      ),
+      'react-native-status-bar-height$': path.resolve(
+        appDirectory,
+        'node_modules/react-native-status-bar-height'
+      )
     },
     // If you're working on a multi-platform React Native app, web-specific
     // module implementations should be written in files using the extension

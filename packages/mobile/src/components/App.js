@@ -12,7 +12,7 @@ import { colors } from 'loot-design/src/style';
 import AnimatedLoading from 'loot-design/src/svg/v1/AnimatedLoading';
 import ManagementApp from './manager/ManagementApp';
 import FinancesApp from './FinancesApp';
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo@2x.png';
 
 class App extends React.Component {
   state = { initializing: true };

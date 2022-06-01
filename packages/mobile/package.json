@@ -9,7 +9,7 @@
     "android:prod": "rm -f ./android/app/build/generated/assets/react/release/index.android.bundle && npx react-native run-android --appId com.shiftreset.actual --variant=release",
     "ios": "react-native run-ios",
     "web": "webpack-dev-server --config ./web/webpack.config.js",
-    "web:build": "webpack -p --config ./web/webpack.config.js",
+    "web:build": "webpack --config ./web/webpack.config.js",
     "test": "jest",
     "postinstall": "patch-package"
   },
@@ -54,6 +54,7 @@
   "devDependencies": {
     "babel-loader": "^8.2.5",
     "babel-plugin-react-native-web": "^0.17.7",
+    "html-webpack-plugin": "^5.5.0",
     "rn-snoopy": "^2.0.2",
     "url-loader": "^4.1.1",
     "webpack": "^5.72.1",
