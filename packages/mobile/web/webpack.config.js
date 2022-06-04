@@ -68,10 +68,14 @@ module.exports = {
     ]
   },
     plugins: [
-
-    new HtmlWebpackPlugin({
-    }),
-
+      new HtmlWebpackPlugin({
+        title: "Actual",
+        template: path.resolve(__dirname, "index.html")
+      }),
+      // Workaround for react-native-reanimated
+      new webpack.DefinePlugin({
+        'process.env': JSON.stringify({})
+      }),
   ],
 
   resolve: {
@@ -98,6 +102,6 @@ module.exports = {
     // If you're working on a multi-platform React Native app, web-specific
     // module implementations should be written in files using the extension
     // `.web.js`.
-    extensions: [ '.web.js', '.js' ]
+    extensions: [ '.browser.js', '.web.js', '.js' ]
   }
 }
